@@ -182,7 +182,7 @@ function App({}: AppProps) {
 
 	<div className="flex">
 		<button className="backward" onClick = {handleNationalBackwardClick}>back</button>
-        <button className="button" onClick={() => {handleNationalClick();}}>random national motion</button>
+        <button className="button" onClick={() => {handleNationalClick();}}>random national</button>
         <button className="copy" onClick={() => copy(copyJson[nationalIndex])}>copy</button>
 	</div>
 		<NationalModal className="nationalModal" index={nationalIndex} flag={nationalIsClicked} type={"national"} />
@@ -190,7 +190,7 @@ function App({}: AppProps) {
 
 	<div className="flex">
 		<button className="backward" onClick = {handleInternationalBackwardClick}>back</button>
-        <button className="button" onClick={() => {handleInternationalClick();}}>random international motion</button>
+        <button className="button" onClick={() => {handleInternationalClick();}}>random international</button>
         <button className="copy" onClick={() => copy(copyJson[internationalIndex + datastructure["national"].length - 1])}>copy</button>
 	</div>
 		<InternationalModal className="internationalModal" index={internationalIndex} flag={internationalIsClicked} type={"international"} />
@@ -204,6 +204,8 @@ function App({}: AppProps) {
 	{/* <p className="explain"></p> */}
 	<p>press blue button to generate random motions</p>
 	{/* <a href="http://resources.tokyodebate.org/debate-motion/motion/" className="explain">motions</a> */}
+	<span>show random tournaments from 486 national tournaments and 306 international tournaments, 9914 motions collected by </span><a href="http://resources.tokyodebate.org/debate-motion/motion/">utds motion</a>
+	<br></br>
 	<br></br>
 	<p> The University of Tokyo, Debating Society. UTDS</p>
 	<br></br>

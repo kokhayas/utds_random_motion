@@ -145,7 +145,7 @@ function App({}) {
     onClick: () => {
       handleNationalClick();
     }
-  }, "random national motion"), /* @__PURE__ */ React.createElement("button", {
+  }, "random national"), /* @__PURE__ */ React.createElement("button", {
     className: "copy",
     onClick: () => copy(copyJson[nationalIndex])
   }, "copy")), /* @__PURE__ */ React.createElement(NationalModal, {
@@ -163,7 +163,7 @@ function App({}) {
     onClick: () => {
       handleInternationalClick();
     }
-  }, "random international motion"), /* @__PURE__ */ React.createElement("button", {
+  }, "random international"), /* @__PURE__ */ React.createElement("button", {
     className: "copy",
     onClick: () => copy(copyJson[internationalIndex + datastructure["national"].length - 1])
   }, "copy")), /* @__PURE__ */ React.createElement(InternationalModal, {
@@ -171,6 +171,8 @@ function App({}) {
     index: internationalIndex,
     flag: internationalIsClicked,
     type: "international"
-  }), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("p", null, "press blue button to generate random motions"), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("p", null, " The University of Tokyo, Debating Society. UTDS"), /* @__PURE__ */ React.createElement("br", null));
+  }), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("p", null, "press blue button to generate random motions"), /* @__PURE__ */ React.createElement("span", null, "show random tournaments from 486 national tournaments and 306 international tournaments, 9914 motions collected by "), /* @__PURE__ */ React.createElement("a", {
+    href: "http://resources.tokyodebate.org/debate-motion/motion/"
+  }, "utds motion"), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("p", null, " The University of Tokyo, Debating Society. UTDS"), /* @__PURE__ */ React.createElement("br", null));
 }
 export default App;
