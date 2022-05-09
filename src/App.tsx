@@ -174,7 +174,7 @@ function App({}: AppProps) {
 	<div className="App">
 		<div className="picParent"><img src={pic} alt="picture"/></div>
 	<br></br>
-	<a href="http://resources.tokyodebate.org/debate-motion/tab/">utds</a>
+	<a href="http://resources.tokyodebate.org/debate-motion/tips/">utds</a>
 	<br></br>
 	<br></br>
 
