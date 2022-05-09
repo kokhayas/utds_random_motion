@@ -132,7 +132,7 @@ function App({}) {
     src: pic,
     alt: "picture"
   })), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("a", {
-    href: "http://resources.tokyodebate.org/debate-motion/tab/"
+    href: "http://resources.tokyodebate.org/debate-motion/tips/"
   }, "utds"), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
     className: "seperator"
   }), /* @__PURE__ */ React.createElement("div", {
