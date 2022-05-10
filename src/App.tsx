@@ -163,25 +163,34 @@ function App({}: AppProps) {
 	}
 
 	function handleNationalBackwardClick() {
-		setNationalIndex(nationalHistory.pop());
+		if (nationalHistory.length > 0) {
+		setNationalIndex(nationalHistory.pop());}
 	}
 
 	function handleInternationalBackwardClick() {
+		if (internationalHistory.length > 0) {
 		setInternationalIndex(internationalHistory.pop());
+		}
 	}
 
   return (
 	<div className="App">
-		<div className="picParent"><img src={pic} alt="picture"/></div>
+		{/* <div className="picParent"><img src={pic} alt="picture"/></div>
 	<br></br>
-	<a href="http://resources.tokyodebate.org/debate-motion/tips/">utds</a>
+	<a href="http://resources.tokyodebate.org/debate-motion/tips/">utds</a> */}
+
+	<a className="picParent" href="http://resources.tokyodebate.org/debate-motion/tips/"
+   onclick="document.location='http://resources.tokyodebate.org/debate-motion/tips/';return false;"
+   target="_blank">
+    <img src={pic} />
+</a>
 	<br></br>
 	<br></br>
 
 		<div className="seperator"></div>
 
 	<div className="flex">
-		<button className="backward" onClick = {handleNationalBackwardClick}>back</button>
+		<button className="backward" onClick = {handleNationalBackwardClick}>戻す</button>
         <button className="button" onClick={() => {handleNationalClick();}}>random national</button>
         <button className="copy" onClick={() => copy(copyJson[nationalIndex])}>copy</button>
 	</div>
@@ -189,26 +198,23 @@ function App({}: AppProps) {
 		<br></br>
 
 	<div className="flex">
-		<button className="backward" onClick = {handleInternationalBackwardClick}>back</button>
+		<button className="backward" onClick = {handleInternationalBackwardClick}>戻す</button>
         <button className="button" onClick={() => {handleInternationalClick();}}>random international</button>
         <button className="copy" onClick={() => copy(copyJson[internationalIndex + datastructure["national"].length - 1])}>copy</button>
 	</div>
 		<InternationalModal className="internationalModal" index={internationalIndex} flag={internationalIsClicked} type={"international"} />
 
 		<br></br>
+	{/* <p className="explain"></p> */}
+	{/* <p>press blue button to generate random motions</p>
+	{/* <a href="http://resources.tokyodebate.org/debate-motion/motion/" className="explain">motions</a> */}
+	{/* <span>show random tournaments from 486 national tournaments and 306 international tournaments, 9914 motions collected by </span><a href="http://resources.tokyodebate.org/debate-motion/motion/">utds motion</a> */}
+	{/* <br></br> */}
+	{/* <br></br> */}
+	<p> The University of Tokyo, Debating Society. UTDS</p>
+		<br></br>
 		<br></br>
 
-
-
-	<br></br>
-	{/* <p className="explain"></p> */}
-	<p>press blue button to generate random motions</p>
-	{/* <a href="http://resources.tokyodebate.org/debate-motion/motion/" className="explain">motions</a> */}
-	<span>show random tournaments from 486 national tournaments and 306 international tournaments, 9914 motions collected by </span><a href="http://resources.tokyodebate.org/debate-motion/motion/">utds motion</a>
-	<br></br>
-	<br></br>
-	<p> The University of Tokyo, Debating Society. UTDS</p>
-	<br></br>
 	</div>
 	);
 }

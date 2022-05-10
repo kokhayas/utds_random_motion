@@ -263,7 +263,7 @@ img {
 
 .index {
 	/* text-align: right; */
-	margin-right: 0%;
+	margin-right: 2rem;
 	/* margin: 0rem 2rem; */
 	font-size: 0.6rem;
 	margin-bottom: 0.2rem;
@@ -279,7 +279,7 @@ img {
 } */
 
 .index-close {
-	margin-left: 89%;
+	margin-left: 85%;
 }
 
 /*  write a css that put two div bottom right of parent div */

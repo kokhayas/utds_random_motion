@@ -119,28 +119,32 @@ function App({}) {
     setInternationalIsClicked(!internationalIsClicked);
   }
   function handleNationalBackwardClick() {
-    setNationalIndex(nationalHistory.pop());
+    if (nationalHistory.length > 0) {
+      setNationalIndex(nationalHistory.pop());
+    }
   }
   function handleInternationalBackwardClick() {
-    setInternationalIndex(internationalHistory.pop());
+    if (internationalHistory.length > 0) {
+      setInternationalIndex(internationalHistory.pop());
+    }
   }
   return /* @__PURE__ */ React.createElement("div", {
     className: "App"
-  }, /* @__PURE__ */ React.createElement("div", {
-    className: "picParent"
+  }, /* @__PURE__ */ React.createElement("a", {
+    className: "picParent",
+    href: "http://resources.tokyodebate.org/debate-motion/tips/",
+    onclick: "document.location='http://resources.tokyodebate.org/debate-motion/tips/';return false;",
+    target: "_blank"
   }, /* @__PURE__ */ React.createElement("img", {
-    src: pic,
-    alt: "picture"
-  })), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("a", {
-    href: "http://resources.tokyodebate.org/debate-motion/tips/"
-  }, "utds"), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+    src: pic
+  })), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
     className: "seperator"
   }), /* @__PURE__ */ React.createElement("div", {
     className: "flex"
   }, /* @__PURE__ */ React.createElement("button", {
     className: "backward",
     onClick: handleNationalBackwardClick
-  }, "back"), /* @__PURE__ */ React.createElement("button", {
+  }, "戻す"), /* @__PURE__ */ React.createElement("button", {
     className: "button",
     onClick: () => {
       handleNationalClick();
@@ -158,7 +162,7 @@ function App({}) {
   }, /* @__PURE__ */ React.createElement("button", {
     className: "backward",
     onClick: handleInternationalBackwardClick
-  }, "back"), /* @__PURE__ */ React.createElement("button", {
+  }, "戻す"), /* @__PURE__ */ React.createElement("button", {
     className: "button",
     onClick: () => {
       handleInternationalClick();
@@ -171,8 +175,6 @@ function App({}) {
     index: internationalIndex,
     flag: internationalIsClicked,
     type: "international"
-  }), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("p", null, "press blue button to generate random motions"), /* @__PURE__ */ React.createElement("span", null, "show random tournaments from 486 national tournaments and 306 international tournaments, 9914 motions collected by "), /* @__PURE__ */ React.createElement("a", {
-    href: "http://resources.tokyodebate.org/debate-motion/motion/"
-  }, "utds motion"), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("p", null, " The University of Tokyo, Debating Society. UTDS"), /* @__PURE__ */ React.createElement("br", null));
+  }), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("p", null, " The University of Tokyo, Debating Society. UTDS"), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null));
 }
 export default App;
