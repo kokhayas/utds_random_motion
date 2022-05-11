@@ -18,6 +18,7 @@ export function Slide(props) {
   }
 }
 export function NationalModal(props) {
+  let roundFlag = false;
   let json_dict = datastructure["national"][props.index];
   if (true) {
     return /* @__PURE__ */ React.createElement("div", {
@@ -25,16 +26,16 @@ export function NationalModal(props) {
       key: props.index
     }, /* @__PURE__ */ React.createElement("div", {
       className: "titles"
-    }, json_dict.title), Object.values(json_dict.rounds).map((e) => {
+    }, json_dict.title), Object.values(json_dict.rounds).map((e, index, array) => {
       return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", {
         className: "set"
       }, /* @__PURE__ */ React.createElement("div", {
         className: "parant"
       }, /* @__PURE__ */ React.createElement("div", {
         className: "child1"
-      }, /* @__PURE__ */ React.createElement("div", {
+      }, index === 0 || array[index - 1].round !== e.round ? /* @__PURE__ */ React.createElement("div", {
         className: "title2"
-      }, e.round), /* @__PURE__ */ React.createElement("div", {
+      }, e.round) : /* @__PURE__ */ React.createElement(React.Fragment, null), /* @__PURE__ */ React.createElement("div", {
         className: "motion2"
       }, e.motion), /* @__PURE__ */ React.createElement(Slide, {
         flag: e.slide
@@ -56,16 +57,16 @@ export function InternationalModal(props) {
       key: props.index
     }, /* @__PURE__ */ React.createElement("div", {
       className: "titles"
-    }, json_dict.title), Object.values(json_dict.rounds).map((e) => {
+    }, json_dict.title), Object.values(json_dict.rounds).map((e, index, array) => {
       return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", {
         className: "set"
       }, /* @__PURE__ */ React.createElement("div", {
         className: "parant"
       }, /* @__PURE__ */ React.createElement("div", {
         className: "child1"
-      }, /* @__PURE__ */ React.createElement("div", {
+      }, index === 0 || array[index - 1].round !== e.round ? /* @__PURE__ */ React.createElement("div", {
         className: "title2"
-      }, e.round), /* @__PURE__ */ React.createElement("div", {
+      }, e.round) : /* @__PURE__ */ React.createElement(React.Fragment, null), /* @__PURE__ */ React.createElement("div", {
         className: "motion2"
       }, e.motion), /* @__PURE__ */ React.createElement(Slide, {
         flag: e.slide
@@ -130,6 +131,8 @@ function App({}) {
   }
   return /* @__PURE__ */ React.createElement("div", {
     className: "App"
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: "divpic"
   }, /* @__PURE__ */ React.createElement("a", {
     className: "picParent",
     href: "http://resources.tokyodebate.org/debate-motion/tips/",
@@ -137,19 +140,19 @@ function App({}) {
     target: "_blank"
   }, /* @__PURE__ */ React.createElement("img", {
     src: pic
-  })), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+  }))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
     className: "seperator"
   }), /* @__PURE__ */ React.createElement("div", {
     className: "flex"
   }, /* @__PURE__ */ React.createElement("button", {
     className: "backward",
     onClick: handleNationalBackwardClick
-  }, "戻す"), /* @__PURE__ */ React.createElement("button", {
+  }, "back"), /* @__PURE__ */ React.createElement("button", {
     className: "button",
     onClick: () => {
       handleNationalClick();
     }
-  }, "random national"), /* @__PURE__ */ React.createElement("button", {
+  }, "national debate"), /* @__PURE__ */ React.createElement("button", {
     className: "copy",
     onClick: () => copy(copyJson[nationalIndex])
   }, "copy")), /* @__PURE__ */ React.createElement(NationalModal, {
@@ -162,12 +165,12 @@ function App({}) {
   }, /* @__PURE__ */ React.createElement("button", {
     className: "backward",
     onClick: handleInternationalBackwardClick
-  }, "戻す"), /* @__PURE__ */ React.createElement("button", {
+  }, "back"), /* @__PURE__ */ React.createElement("button", {
     className: "button",
     onClick: () => {
       handleInternationalClick();
     }
-  }, "random international"), /* @__PURE__ */ React.createElement("button", {
+  }, "international debate"), /* @__PURE__ */ React.createElement("button", {
     className: "copy",
     onClick: () => copy(copyJson[internationalIndex + datastructure["national"].length - 1])
   }, "copy")), /* @__PURE__ */ React.createElement(InternationalModal, {

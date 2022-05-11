@@ -20,23 +20,25 @@ export function Slide(props) {
 	}
 }
 export function NationalModal(props) {
+	let roundFlag = false;
 	let json_dict = datastructure["national"][props.index]
 if (true){
 return (
 		<div className="sets" key={props.index}>
 		<div className="titles">{json_dict.title}</div>
 			{
-			Object.values(json_dict.rounds).map((e) => {
+			Object.values(json_dict.rounds).map((e, index, array) => {
 			return (
 					<>
 						<div className="set">
 							<div className="parant">
 								<div className="child1">
+								{ index === 0 || (array[index-1].round !== e.round) ?
 								<div className="title2">
 									{
 									e.round
 									}
-								</div>
+								</div>:<></>}
 									<div className="motion2">
 										{
 										e.motion
@@ -69,17 +71,18 @@ return (
 		<div className="sets" key={props.index}>
 		<div className="titles">{json_dict.title}</div>
 			{
-			Object.values(json_dict.rounds).map((e) => {
+			Object.values(json_dict.rounds).map((e, index, array) => {
 			return (
 					<>
 						<div className="set">
 							<div className="parant">
 								<div className="child1">
+								{ index === 0 || (array[index-1].round !== e.round) ?
 								<div className="title2">
 									{
 									e.round
 									}
-								</div>
+								</div>:<></>}
 									<div className="motion2">
 										{
 										e.motion
@@ -178,28 +181,30 @@ function App({}: AppProps) {
 		{/* <div className="picParent"><img src={pic} alt="picture"/></div>
 	<br></br>
 	<a href="http://resources.tokyodebate.org/debate-motion/tips/">utds</a> */}
-
+	<div className="divpic">
 	<a className="picParent" href="http://resources.tokyodebate.org/debate-motion/tips/"
-   onclick="document.location='http://resources.tokyodebate.org/debate-motion/tips/';return false;"
-   target="_blank">
+	onclick="document.location='http://resources.tokyodebate.org/debate-motion/tips/';return false;"
+	target="_blank">
     <img src={pic} />
-</a>
-	<br></br>
+	</a>
+	</div>
+
+	{/* <br></br> */}
 	<br></br>
 
 		<div className="seperator"></div>
 
 	<div className="flex">
-		<button className="backward" onClick = {handleNationalBackwardClick}>戻す</button>
-        <button className="button" onClick={() => {handleNationalClick();}}>random national</button>
+		<button className="backward" onClick = {handleNationalBackwardClick}>back</button>
+        <button className="button" onClick={() => {handleNationalClick();}}>national debate</button>
         <button className="copy" onClick={() => copy(copyJson[nationalIndex])}>copy</button>
 	</div>
 		<NationalModal className="nationalModal" index={nationalIndex} flag={nationalIsClicked} type={"national"} />
 		<br></br>
 
 	<div className="flex">
-		<button className="backward" onClick = {handleInternationalBackwardClick}>戻す</button>
-        <button className="button" onClick={() => {handleInternationalClick();}}>random international</button>
+		<button className="backward" onClick = {handleInternationalBackwardClick}>back</button>
+        <button className="button" onClick={() => {handleInternationalClick();}}>international debate</button>
         <button className="copy" onClick={() => copy(copyJson[internationalIndex + datastructure["national"].length - 1])}>copy</button>
 	</div>
 		<InternationalModal className="internationalModal" index={internationalIndex} flag={internationalIsClicked} type={"international"} />

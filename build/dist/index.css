@@ -56,24 +56,29 @@ code {
 	margin-top: 1.5rem;
 	margin-bottom: 0.2rem;
 	padding: 2rem, 2rem;
-	border-radius: 0.5rem;
-	border: solid gray;
+	border-radius: 0.15rem;
+	border: solid gainsboro 1px;
 	line-height: 1.35rem;
 	margin-left:2rem;
 	margin-right: 2rem;
-}
 
+	color: rgb(64, 64, 64);
+	font-family: sans-serif;
+	/* font-weight: 500; */
+
+}
 
 .set{
 	margin: 1.2rem;
 }
 
-
 .slide {
 	margin-left: 1rem;
 	/* padding: 0.1rem; */
 	padding-right: 1rem;
-	font-size: 0.85rem;
+	font-size: 0.95rem;
+	color: rgb(64, 64, 64);
+	/* font-family: sans-serif; */
 }
 
 .title {
@@ -89,12 +94,20 @@ code {
 
 .title2 {
 	text-align: left;
-	font-size: 0.9rem;
+	font-size: 0.8rem;
+	padding-left: 0.5rem;
+
+	padding-top: 0.14rem;
+	padding-bottom: 0.14rem;
+	/* height: 1.7rem; */
 	color: black;
 	text-decoration: underline background-clip: padding-box;
 	background-color: rgba(0, 0, 0, .03);
 	border-bottom: 1px solid;
 	border-bottom-color: #dc3545;
+
+	color: rgb(64, 64, 64);
+			/* font-family: Helvetica; */
 }
 
 /* .seperator {
@@ -150,14 +163,16 @@ img {
 
 .picParent{
 	text-align: center;
-
+}
+.divpic {
+	box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.05);
 }
 
 .button {
 	appearance: none;
 	border: 0;
-	border-radius: 0.4rem;
-	background: #4676D7;
+	border-radius: 0.1rem;
+	background: #1f76e2;
 	color: #fff;
 	padding: 8px 15px;
 	font-size: 20px;
@@ -170,14 +185,21 @@ img {
 
 .motion2 {
 	margin: 0.5rem 0rem;
+	margin-left: 0.5rem;
 }
 
 
 
 
 .titles {
-	text-align: center;
-	margin-top: 0.5rem;
+	font-size: 1rem;
+	text-align: left;
+	margin-top: 0.7rem;
+	margin-left: 1rem;
+
+	color: rgb(64, 64, 64);
+	font-family: sans-serif;
+	/* font-weight: 40; */
 }
 
 .parent-input-button{
@@ -240,9 +262,9 @@ img {
 	appearance: none;
 	border: 0;
 	border-radius: 0.4rem;
-	background: #4676D7;
+	background: #1f76e2;
 	color: #fff;
-	padding: 8px 15px;
+	padding: 7px 11px;
 	font-size: 20px;
 	text-align: center;
 	margin-top: 1rem;
@@ -283,3 +305,7 @@ img {
 }
 
 /*  write a css that put two div bottom right of parent div */
+
+/* .shadow {
+	box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.45);
+} */
