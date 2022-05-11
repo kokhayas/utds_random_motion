@@ -148,7 +148,7 @@ export function SearchModal(props) {
 interface AppProps {}
 function App({}: AppProps) {
 	const [nationalIndex, setNationalIndex] = useState(0);
-	const [internationalIndex, setInternationalIndex] = useState(0);
+	const [internationalIndex, setInternationalIndex] = useState(97);
 	const [value, copy] = useCopyToClipboard()
 	const [nationalIsClicked, setNationalIsClicked] = useState(true);
 	const [internationalIsClicked, setInternationalIsClicked] = useState(true);
