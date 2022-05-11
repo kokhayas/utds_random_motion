@@ -63,6 +63,7 @@ code {
 	margin-right: 2rem;
 
 	color: rgb(64, 64, 64);
+	color: black;
 	font-family: sans-serif;
 	/* font-weight: 500; */
 
@@ -79,6 +80,7 @@ code {
 	font-size: 0.95rem;
 	color: rgb(64, 64, 64);
 	/* font-family: sans-serif; */
+	color: black;
 }
 
 .title {
@@ -106,7 +108,7 @@ code {
 	border-bottom: 1px solid;
 	border-bottom-color: #dc3545;
 
-	color: rgb(64, 64, 64);
+	/* color: rgb(80, 80, 80); */
 			/* font-family: Helvetica; */
 }
 
@@ -200,6 +202,7 @@ img {
 	color: rgb(64, 64, 64);
 	font-family: sans-serif;
 	/* font-weight: 40; */
+	color: black;
 }
 
 .parent-input-button{
